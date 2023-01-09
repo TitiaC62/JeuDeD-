@@ -17,23 +17,60 @@
 
         <header>
             <h1>Bienvenu sur le jeu de dé</h1>
-            <div class="p-2">
-                <a href="#" target="_blank" rel="noopener noreferrer">Règles du jeu</a>
+        
+              <!-- Button trigger modal -->
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#rules">
+                Règles du jeu
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade text-lowercase" id="rules" tabindex="-1" aria-labelledby="rules" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="rules">
+                    Règles du jeu
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Règles :
+                            Le jeu comprend 2 joueurs sur un seul et même écran. <br/>
+                            Chaque joueur possède un score temporaire et un score global.<br/>
+                            À chaque tour, le joueur a son score initialisé à 0 et peut lancer un dé autant de fois qu'il le souhaite. Le
+                            résultat d’un lancer est ajouté au score temporaire. 
+                        </p>
+                        <p>
+                            Lors de son tour, le joueur peut décider à tout moment de:<br/>
+                            - Cliquer sur l’option “Hold”, qui permet d’envoyer les points du ROUND vers le GLOBAL. Ce sera alors le
+                            tour de l’autre joueur.<br/>
+                            - Lancer le dé. S’il obtient un 1, son score ROUND est perdu et c’est la fin de son tour.<br/>
+                            Le premier joueur qui atteint les 100 points sur global gagne le jeu.<br/>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Jouer !</button>
+                    </div>
+                </div>
+                </div>
             </div>
+           
+      
 
-            <div class=" p-2">
-                <i class="bi bi-plus-circle"></i>
+              <div class=" p-2">
+                <i class="bi bi-plus-circle icon"></i>
                 New game  
             </div>
+            
         </header>
         
         <div class=" row  height">
-            <section class="row col-sm-11 col-lg-5 bg-light p-3">
+            <section class="row col-sm-12 col-lg-5 bg-light p-3">
                 <h2>player 1</h2>
 
                 <div id="RoundPlayer1" class="number p-3"></div>
 
-                <div class="redBox  ">
+                <div class="redBox col-3  ">
                     <div >Curent</div> 
                     <div id="globalScore" class="global  "></div>
                 </div>
@@ -41,27 +78,26 @@
                 
             </section>
 
-            <div class="row col-sm-11 col-lg-2  ">
-                <div class=" p-3">
-                    <img src="" alt="">
+            <div class="row col-sm-12 col-lg-2  ">
+                <div id="dice" class=" p-3">    
                 </div>
 
                 <div class=" p-2">
-                    <i class="bi bi-arrow-repeat"></i>
+                    <i class="bi bi-arrow-repeat icon"></i>
                     Roll dice
                 </div>
                 <div class=" p-2">
-                    <i class="bi bi-box-arrow-down"></i>
+                    <i class="bi bi-box-arrow-down icon"></i>
                     hold
                 </div>
             </div>
 
-            <section class=" row col-sm-11 col-lg-5 bg-light p-3">
+            <section class=" row col-sm-12 col-lg-5 bg-light p-3">
                 <h2>player 2</h2>
 
                 <div id="RoundPlayer1" class="number p-3"></div>
 
-                <div class="redBox  ">
+                <div class="redBox col-3  ">
                     <div >Curent</div> 
                     <div id="globalScore" class="global "></div>
                 </div>
