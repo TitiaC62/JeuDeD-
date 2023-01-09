@@ -1,1 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+
+.height{
+    height: 100vH;
+    
+}
+
+.redBox{
+    height: 5rem;
+    width: 5rem;
+    border: solid 0.5px red;
+    background-color: red;
+    margin: auto;
+}
+
+.global{
+    color: white;
+}
