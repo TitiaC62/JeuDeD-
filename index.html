@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+                 <!-- Links-->
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -13,17 +14,17 @@
         <title>Jeu de dé</title>
     </head>
 
-    <body class="text-center text-uppercase">
+    <body class="container text-center text-uppercase">
 
         <header>
-            <h1>Bienvenu sur le jeu de dé</h1>
-        
-              <!-- Button trigger modal -->
+            <h1>Bienvenue sur le jeu de dé</h1>
+            
+                    <!-- Button trigger modal -->
             <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#rules">
                 Règles du jeu
             </button>
             
-            <!-- Modal -->
+                     <!-- Modal -->
             <div class="modal fade text-lowercase" id="rules" tabindex="-1" aria-labelledby="rules" aria-hidden="true">
                 <div class="modal-dialog">
                 <div class="modal-content">
@@ -55,51 +56,60 @@
                 </div>
             </div>
            
-      
-
-              <div class=" p-2">
-                <i class="bi bi-plus-circle icon"></i>
-                New game  
-            </div>
-            
+                     <!-- Button new Game-->
+            <button id="newGame" class="btn p-2">
+                <div class=" p-2">
+                    <i class="bi bi-plus-circle icon"></i>
+                    New game  
+                </div>
+            </button>
         </header>
         
-        <div class=" row  height">
+
+                    <!-- game -->
+        <div class=" row  height ">
+
+                    <!-- player 1-->
             <section class="row col-sm-12 col-lg-5 bg-light p-3">
-                <h2>player 1</h2>
+                <h2 id="player1">player 1</h2>
 
                 <div id="RoundPlayer1" class="number p-3"></div>
 
                 <div class="redBox col-3  ">
                     <div >Curent</div> 
-                    <div id="globalScore" class="global  "></div>
-                </div>
-                
-                
+                    <div id="globalScore1" class="global  "></div>
+                </div>               
             </section>
 
+
+                   <!-- Central Column -->
             <div class="row col-sm-12 col-lg-2  ">
                 <div id="dice" class=" p-3">    
                 </div>
 
-                <div class=" p-2">
+                <button id="rollDice" class="btn p-2">
                     <i class="bi bi-arrow-repeat icon"></i>
                     Roll dice
-                </div>
-                <div class=" p-2">
+                    <div  class="dice p-2">
+                        <img src="/media/dice_1.png" alt="dice">
+                    </div>
+                </button>
+                <button class="btn p-2">
                     <i class="bi bi-box-arrow-down icon"></i>
                     hold
-                </div>
+                </button>
             </div>
 
-            <section class=" row col-sm-12 col-lg-5 bg-light p-3">
-                <h2>player 2</h2>
 
-                <div id="RoundPlayer1" class="number p-3"></div>
+                   <!-- Player 2-->
+            <section class=" row col-sm-12 col-lg-5 bg-light p-3">
+                <h2 id="player2">player 2</h2>
+
+                <div id="RoundPlayer2" class="number p-3"></div>
 
                 <div class="redBox col-3  ">
                     <div >Curent</div> 
-                    <div id="globalScore" class="global "></div>
+                    <div id="globalScore2" class="global "></div>
                 </div>
                 
             </section>
@@ -109,7 +119,7 @@
     
         
 
-
+                  <!-- Scripts-->
 
         <script src="app.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
