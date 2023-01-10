@@ -26,7 +26,7 @@ let randomNumber = 0
     randomNumber = Math.floor(Math.random() * 6) + 1;
 };
 
-console.log(rollDice)
+
 
 //Score temporaire 
 
