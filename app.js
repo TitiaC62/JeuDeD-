@@ -1,22 +1,18 @@
-
 //Variables
 let Pseudo1 = document.getElementById("PseudoPlayer1")
 let Pseudo2 = document.getElementById("PseudoPlayer2")
 
-let RoundPlayer1 = document.getElementById("RoundPlayer1")
-let RoundPlayer2 = document.getElementById("RoundPlayer2")
+let Player1 = document.getElementById("Player1")
+let Player2 =  document.getElementById("Player2")
 
-let GlobalScore1 = document.getElementById("GlobalScore1")
-let GlobalScore2 = document.getElementById("GlobalScore2")
-
-let RollDice = document.getElementById("RollDice")
 let Dice = document.getElementById("Dice")
 let NewGame = document.getElementById("NewGame")
-
+let PlayerOn = 0
+let RandomNumber = 0
 
 
 //Entrer les noms des joueurs et remplacer player 1 et player 2 par ceux-ci
-//Le joueur actif commence
+//Le joueur actif commence (par défaut joueur 1)
 // Cliquer sur le dé: avoir un chiffre entre 1 et 6
 // Si le dé est différent de 1 => ajouter au score temporaire
 //Verifier que le joueur <= 100
@@ -44,14 +40,56 @@ function afficher(){
 //New game
 
 NewGame.addEventListener('click', () => {
-    RoundPlayer1.textContent = 0
-    RoundPlayer2.textContent = 0
-    
-    GlobalScore1.textContent = 0
-    GlobalScore2.textContent = 0
-
+         document.location.reload()
     
 })
+
+
+//Changement de joueurs
+
+function ChangePlayer() { 
+    RoundScore = 0
+     PlayerOn === 0 ? (PlayerOn = 1 ) : (PlayerOn = 0) 
+     document.querySelector(`.player${PlayerOn}`)
+     PlayerOn.classList.toggle("Active-Player");
+    
+
+// changement de couleur pour le joueur actif
+     if(PlayerOn = 0){
+         Player1.style.color = "red"
+     } else {
+         Player2.style.color = "red"
+     }
+   }
+
+  
+//Lancer les dés
+
+let RoundScore = 0
+  
+Dice.addEventListener('click', () =>{
+  let RandomNumber = Math.floor(Math.random()*6) + 1
+Dice.innerHTML = `<img  src="./media/dice_${RandomNumber}.png" alt="dice_${RandomNumber}">`;
+
+if (RandomNumber !== 1){
+    RoundScore += RandomNumber
+    document.querySelector(`#RoundPlayer${PlayerOn}`).textContent = RoundScore
+    
+    
+} else {
+    ChangePlayer()
+}
+
+})
+
+
+
+//Score globale
+
+globaleScore = function (){
+    let GlobaleScore
+    GlobaleScore += RoundScore
+}
 
 
 
