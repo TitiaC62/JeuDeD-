@@ -21,6 +21,7 @@
             
                     <!-- Button trigger modal -->
             <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#rules">
+                <i class="bi bi-info-circle icon"></i>
                 Règles du jeu
             </button>
             
@@ -30,7 +31,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                     <h1 class="modal-title fs-5" id="rules">
-                    Règles du jeu
+                         Règles du jeu
                     </h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
@@ -57,41 +58,71 @@
             </div>
            
                      <!-- Button new Game-->
-            <button id="newGame" class="btn p-2">
+            <button id="NewGame" class="btn p-2">
                 <div class=" p-2">
                     <i class="bi bi-plus-circle icon"></i>
                     New game  
                 </div>
             </button>
+
+                    <!--Player name-->
+            <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#playername">
+                <i class="bi bi-pen icon"></i>
+                Nom des joueurs
+            </button>
+
+            <div class="modal fade text-capitalize" id="playername" tabindex="-1" aria-labelledby="playername" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="playername">
+                    Pseudos des joueurs
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                       Entrez vos pseudos: <br>
+                       <form >
+                           <input type="text" name="pseudo" id="PseudoPlayer1" placeholder="Player 1">
+                           <input type="text" name="pseudo" id="PseudoPlayer2" placeholder="Player 2">
+                       </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="afficher()">Ok !</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div>
+            </div>
         </header>
         
 
                     <!-- game -->
-        <div class="container row  height ">
+        <div class="container d-flex align-items row  height ">
 
                     <!-- player 1-->
             <section class="row col-sm-12 col-lg-5 bg-light p-3">
-                <h2 id="player1">player 1</h2>
+                <h2 id="Player1" >player 1</h2>
 
                 <div id="RoundPlayer1" class="number p-3"></div>
 
                 <div class="redBox col-3  ">
                     <div >Curent</div> 
-                    <div id="globalScore1" class="global  "></div>
+                    <div id="GlobalScore1" class="global  "></div>
                 </div>               
             </section>
 
 
                    <!-- Central Column -->
-            <div class="row col-sm-12 col-lg-2  ">
-                <div id="dice" class=" p-3">    
-                </div>
+            <div class=" col-sm-12 col-lg-2  ">
+              
 
-                <button id="rollDice" class="btn p-2">
+                <button id="RollDice" class=" p-2">
                     <i class="bi bi-arrow-repeat icon"></i>
-                    Roll dice
-                    <div  class="dice p-2">
-                        <img src="/media/dice_1.png" alt="dice">
+                    Roll dice  
+                    <div id="Dice" class="dice p-3">   
+                        <img src="/media/dice_1.png" alt="dice"> 
                     </div>
                 </button>
                 <button class="btn p-2">
@@ -103,13 +134,13 @@
 
                    <!-- Player 2-->
             <section class=" row col-sm-12 col-lg-5 bg-light p-3">
-                <h2 id="player2">player 2</h2>
+                <h2 id="Player2">player 2</h2>
 
                 <div id="RoundPlayer2" class="number p-3"></div>
 
                 <div class="redBox col-3  ">
                     <div >Curent</div> 
-                    <div id="globalScore2" class="global "></div>
+                    <div id="GlobalScore2" class="global "></div>
                 </div>
                 
             </section>

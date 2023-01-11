@@ -1,51 +1,58 @@
 
 //Variables
-const player1 = document.getElementById("player1")
-const player2 = document.getElementById("player2")
+let Pseudo1 = document.getElementById("PseudoPlayer1")
+let Pseudo2 = document.getElementById("PseudoPlayer2")
 
-const RoundPlayer1 = document.getElementById("RoundPlayer1")
-const RoundPlayer2 = document.getElementById("RoundPlayer2")
+let RoundPlayer1 = document.getElementById("RoundPlayer1")
+let RoundPlayer2 = document.getElementById("RoundPlayer2")
 
-const globalScore1 = document.getElementById("globalScore1")
-const globalScore2 = document.getElementById("globalScore2")
+let GlobalScore1 = document.getElementById("GlobalScore1")
+let GlobalScore2 = document.getElementById("GlobalScore2")
 
-const rollDice = document.getElementById("rollDice")
-const newGame = document.getElementById("newGame")
-
-
-let randomNumber = 0
-
-
-//Entrer les noms des joueurs
+let RollDice = document.getElementById("RollDice")
+let Dice = document.getElementById("Dice")
+let NewGame = document.getElementById("NewGame")
 
 
 
-//Lancer les dés
- Dice = function () {
-    let randomNumber = 0
-    randomNumber = Math.floor(Math.random() * 6) + 1;
-};
+//Entrer les noms des joueurs et remplacer player 1 et player 2 par ceux-ci
+//Le joueur actif commence
+// Cliquer sur le dé: avoir un chiffre entre 1 et 6
+// Si le dé est différent de 1 => ajouter au score temporaire
+//Verifier que le joueur <= 100
+//Recommencer tant que dé !== 1
+// si dé = 1 changer de joueur actif
+// sinon player >=100 = win
+// Ajouter le score temporaire au score global
 
 
 
-//Score temporaire 
+//Entrer le nom des joueurs
 
-
-
-
-//Score globale
-
-
-
+function afficher(){
+    let Pseudo1 = document.getElementById("PseudoPlayer1").value;
+    
+    document.getElementById("Player1").value = Pseudo1 ;
+    Player1.innerHTML = Pseudo1
+   
+    let Pseudo2 = document.getElementById("PseudoPlayer2").value;
+    document.getElementById("Player2").value = Pseudo2 ;
+   Player2.innerHTML = Pseudo2
+        }
+   
 
 //New game
 
-newGame.addEventListener('click', () => {
+NewGame.addEventListener('click', () => {
     RoundPlayer1.textContent = 0
     RoundPlayer2.textContent = 0
     
-    globalScore1.textContent = 0
-    globalScore2.textContent = 0
+    GlobalScore1.textContent = 0
+    GlobalScore2.textContent = 0
+
     
 })
+
+
+
 
