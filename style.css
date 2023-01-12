@@ -23,7 +23,8 @@ button{
     margin: auto;
 }
 
-#globalScore{
+#globalScore0,
+#globalScore1{
     color: white;
     font-size: x-large;
 }

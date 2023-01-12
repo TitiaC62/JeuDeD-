@@ -5,11 +5,20 @@ let Pseudo2 = document.getElementById("PseudoPlayer2")
 let Player1 = document.getElementById("Player1")
 let Player2 =  document.getElementById("Player2")
 
+let GlobaleScore0 = document.getElementById("GlobaleScore0")
+let GlobaleScore1 = document.getElementById("GlobaleScore1")
+
 let Dice = document.getElementById("Dice")
 let NewGame = document.getElementById("NewGame")
-let PlayerOn = 0
-let RandomNumber = 0
+let Hold = document.getElementById("Hold")
 
+let PlayerOn = 0
+let RoundScore = 0
+let RandomNumber = 0
+let GlobaleScorePlayer0 = 0
+let GlobaleScorePlayer1 = 0
+
+Player1.style.color = "red"
 
 //Entrer les noms des joueurs et remplacer player 1 et player 2 par ceux-ci
 //Le joueur actif commence (par défaut joueur 1)
@@ -22,9 +31,7 @@ let RandomNumber = 0
 // Ajouter le score temporaire au score global
 
 
-
 //Entrer le nom des joueurs
-
 function afficher(){
     let Pseudo1 = document.getElementById("PseudoPlayer1").value;
     
@@ -38,10 +45,8 @@ function afficher(){
    
 
 //New game
-
 NewGame.addEventListener('click', () => {
-         document.location.reload()
-    
+         document.location.reload()    
 })
 
 
@@ -50,22 +55,22 @@ NewGame.addEventListener('click', () => {
 function ChangePlayer() { 
     RoundScore = 0
      PlayerOn === 0 ? (PlayerOn = 1 ) : (PlayerOn = 0) 
-     document.querySelector(`.player${PlayerOn}`)
-     PlayerOn.classList.toggle("Active-Player");
-    
 
 // changement de couleur pour le joueur actif
-     if(PlayerOn = 0){
+     if(PlayerOn === 0){
+        
          Player1.style.color = "red"
+         Player2.style.color = "black"
      } else {
          Player2.style.color = "red"
+         Player1.style.color ="black"
      }
    }
 
   
 //Lancer les dés
 
-let RoundScore = 0
+
   
 Dice.addEventListener('click', () =>{
   let RandomNumber = Math.floor(Math.random()*6) + 1
@@ -75,8 +80,8 @@ if (RandomNumber !== 1){
     RoundScore += RandomNumber
     document.querySelector(`#RoundPlayer${PlayerOn}`).textContent = RoundScore
     
-    
 } else {
+    document.querySelector(`#RoundPlayer${PlayerOn}`).textContent = 0    
     ChangePlayer()
 }
 
@@ -86,11 +91,34 @@ if (RandomNumber !== 1){
 
 //Score globale
 
-globaleScore = function (){
-    let GlobaleScore
-    GlobaleScore += RoundScore
-}
 
+// Si joueur actif clique sur HOLd => ajouter ROUND à GLOBALE
+
+    Hold.addEventListener('click', () =>{
+        document.querySelector(`#RoundPlayer${PlayerOn}`).textContent = 0 
+        if(PlayerOn === 0){
+            GlobaleScorePlayer0 += RoundScore
+            document.querySelector(`#GlobalScore${PlayerOn}`).textContent = GlobaleScorePlayer0
+        }else{
+            GlobaleScorePlayer1 += RoundScore
+            document.querySelector(`#GlobalScore${PlayerOn}`).textContent = GlobaleScorePlayer1
+        }
+
+        if(GlobaleScorePlayer0 >= 100){ 
+            alert(`${Player1.textContent} a gagné ! `)
+            console.log(Player1.textContent)
+        }
+
+        if(GlobaleScorePlayer1 >= 100){ 
+            alert(`${Player2.textContent} a gagné ! `)
+        }
+
+        ChangePlayer()
+
+    })
+    
+
+// Si joueur actif = 100 => Win
 
 
 
