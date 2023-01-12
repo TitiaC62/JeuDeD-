@@ -1,6 +1,19 @@
 //Variables
+
+//Variables titre
+const container = document.getElementById('text')
+
+const text = 'Bienvenue sur le jeu de dé!'
+const limit = text.length
+const interval = 200
+let index = 0
+
+//Variables noms des joueurs
+
 let Pseudo1 = document.getElementById("PseudoPlayer1")
 let Pseudo2 = document.getElementById("PseudoPlayer2")
+
+//Variables jeu de dé
 
 let Player1 = document.getElementById("Player1")
 let Player2 =  document.getElementById("Player2")
@@ -69,8 +82,6 @@ function ChangePlayer() {
 
   
 //Lancer les dés
-
-
   
 Dice.addEventListener('click', () =>{
   let RandomNumber = Math.floor(Math.random()*6) + 1
@@ -86,10 +97,6 @@ if (RandomNumber !== 1){
 }
 
 })
-
-
-
-//Score globale
 
 
 // Si joueur actif clique sur HOLd => ajouter ROUND à GLOBALE
@@ -118,7 +125,18 @@ if (RandomNumber !== 1){
     })
     
 
-// Si joueur actif = 100 => Win
+   
+    
+   // Titre  
+    
+    const idInterval = setInterval(function(){
+        console.log(index)
+        if(index <= limit){
+            container.innerText = text.slice(0, index++)
+        } else {
+            clearInterval(idInterval)
+        }
+    }, interval)
 
 
 

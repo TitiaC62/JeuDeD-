@@ -14,10 +14,10 @@
         <title>Jeu de dé</title>
     </head>
 
-    <body class=" text-center text-uppercase">
+    <body class="body text-center text-uppercase">
 
-        <header>
-            <h1>Bienvenue sur le jeu de dé</h1>
+        <header class="bg-secondary pt-2 mb-5">
+            <h1 id="text"></h1>
             
                     <!-- Button rules -->
             <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#rules">
@@ -98,16 +98,16 @@
         
 
                     <!-- game -->
-        <div class="container  align-items">
+        <div class="container bg-secondary bg-gradient p-5  align-items">
             <div class="row height">
-                <section class=" col-sm-12 col-lg-5 bg-light p-3 h-100">
+                <section class="rounded-5 col-sm-12 col-lg-5 bg-light p-3 h-100">
                     <h2 id="Player1" >player 1</h2>
 
-                    <div id="RoundPlayer0" class="number p-5 h-80"></div>
+                    <div id="RoundPlayer0" class="number p-5 h-80">0</div>
 
-                    <div class="redBox col-4">
+                    <div class="redBox rounded-5 col-3 bg-danger text-white">
                         <div ></div> 
-                        <div id="GlobalScore0" class="fs-5"></div>
+                        <div id="GlobalScore0" class="fs-1">0</div>
                     </div>               
                 </section>
 
@@ -129,14 +129,13 @@
 
 
                     <!-- Player 2-->
-                <section class="  col-sm-12 col-lg-5 bg-light p-3 h-100">
+                <section class=" rounded-5 col-sm-12 col-lg-5 bg-light p-3 h-100">
                     <h2 id="Player2">player 2</h2>
 
-                    <div id="RoundPlayer1" class="number p-5 h-50"></div>
+                    <div id="RoundPlayer1" class="number p-5 h-50">0</div>
 
-                    <div class="redBox col-4">
-                        <div ></div> 
-                        <div id="GlobalScore1" class="fs-5"></div>
+                    <div class="redBox rounded-5 col-3 bg-danger text-white">
+                        <div id="GlobalScore1" class="fs-1">0</div>
                     </div>  
                 </section>
                 
