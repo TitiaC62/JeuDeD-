@@ -12,24 +12,19 @@ button{
     background-color: transparent;
 }
 
-.height{
-    height: 100vh;
-    
-}
-
 .number{
-    font-size: 80px;
+    font-size: 50px;
 }
 
 .redBox{
     height: 5rem;
-    width: 5rem;
     border: solid 0.5px red;
     background-color: red;
     margin: auto;
 }
 
-#globalScore{
+#globalScore0,
+#globalScore1{
     color: white;
     font-size: x-large;
 }
@@ -38,8 +33,10 @@ button{
     color: red;
 }
 
-.dice
+.dice,
 img{
     width: 80px;
     height: 80px;
+    margin: auto;
 }
+

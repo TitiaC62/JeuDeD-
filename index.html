@@ -19,13 +19,13 @@
         <header>
             <h1>Bienvenue sur le jeu de dé</h1>
             
-                    <!-- Button trigger modal -->
+                    <!-- Button rules -->
             <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#rules">
                 <i class="bi bi-info-circle icon"></i>
                 Règles du jeu
             </button>
             
-                     <!-- Modal -->
+                     <!-- Modal rules -->
             <div class="modal fade text-lowercase" id="rules" tabindex="-1" aria-labelledby="rules" aria-hidden="true">
                 <div class="modal-dialog">
                 <div class="modal-content">
@@ -93,58 +93,56 @@
                 </div>
                 </div>
             </div>
-            <div>
-            </div>
+            
         </header>
         
 
                     <!-- game -->
-        <div class="container d-flex align-items row  height ">
+        <div class="container  align-items">
+            <div class="row height">
+                <section class=" col-sm-12 col-lg-5 bg-light p-3 h-100">
+                    <h2 id="Player1" >player 1</h2>
 
-                    <!-- player 1-->
-            <section class="row col-sm-12 col-lg-5 bg-light p-3">
-                <h2 id="Player1" >player 1</h2>
+                    <div id="RoundPlayer0" class="number p-5 h-80"></div>
 
-                <div id="RoundPlayer1" class="number p-3"></div>
-
-                <div class="redBox col-3  ">
-                    <div >Curent</div> 
-                    <div id="GlobalScore1" class="global  "></div>
-                </div>               
-            </section>
+                    <div class="redBox col-4">
+                        <div ></div> 
+                        <div id="GlobalScore0" class="fs-5"></div>
+                    </div>               
+                </section>
 
 
-                   <!-- Central Column -->
-            <div class=" col-sm-12 col-lg-2  ">
-              
-
-                <button id="RollDice" class=" p-2">
-                    <i class="bi bi-arrow-repeat icon"></i>
-                    Roll dice  
+                    <!-- Central Column -->
+                <div class=" col-sm-12 col-lg-2 ">
+                    <button  class="fs-4 p-2">
+                        <i class="bi bi-arrow-repeat icon"></i>
+                        Roll dice  
+                    </button>
                     <div id="Dice" class="dice p-3">   
-                        <img src="/media/dice_1.png" alt="dice"> 
+                        <img src="/media/dice_1.png" alt="dice"  > 
                     </div>
-                </button>
-                <button class="btn p-2">
-                    <i class="bi bi-box-arrow-down icon"></i>
-                    hold
-                </button>
-            </div>
-
-
-                   <!-- Player 2-->
-            <section class=" row col-sm-12 col-lg-5 bg-light p-3">
-                <h2 id="Player2">player 2</h2>
-
-                <div id="RoundPlayer2" class="number p-3"></div>
-
-                <div class="redBox col-3  ">
-                    <div >Curent</div> 
-                    <div id="GlobalScore2" class="global "></div>
+                    <button id="Hold" class=" p-5 fs-4">
+                        <i class="bi bi-box-arrow-down icon"></i>
+                        hold
+                    </button>
                 </div>
+
+
+                    <!-- Player 2-->
+                <section class="  col-sm-12 col-lg-5 bg-light p-3 h-100">
+                    <h2 id="Player2">player 2</h2>
+
+                    <div id="RoundPlayer1" class="number p-5 h-50"></div>
+
+                    <div class="redBox col-4">
+                        <div ></div> 
+                        <div id="GlobalScore1" class="fs-5"></div>
+                    </div>  
+                </section>
                 
-            </section>
-            
+            </div>
+                    <!-- player 1-->
+     
         </div>
 
     
