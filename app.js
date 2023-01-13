@@ -30,6 +30,7 @@ let Player2 =  document.getElementById("Player2")
 let GlobaleScore0 = document.getElementById("GlobaleScore0")
 let GlobaleScore1 = document.getElementById("GlobaleScore1")
 
+let RollDice = document.getElementById("RollDice")
 let Dice = document.getElementById("Dice")
 let NewGame = document.getElementById("NewGame")
 let Hold = document.getElementById("Hold")
@@ -92,7 +93,7 @@ function ChangePlayer() {
   
 //Lancer les dés
   
-Dice.addEventListener('click', () =>{
+RollDice.addEventListener('click', () =>{
     playSoundDe()
   let RandomNumber = Math.floor(Math.random()*6) + 1
 Dice.innerHTML = `<img  src="./media/dice_${RandomNumber}.png" alt="dice_${RandomNumber}">`;
