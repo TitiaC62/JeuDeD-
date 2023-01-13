@@ -8,6 +8,15 @@ const limit = text.length
 const interval = 200
 let index = 0
 
+
+//Variables sons
+
+const DiceSound = new Audio("/media/sound/dice-sound-40081.mp3");
+const DiceOne = new Audio("/media/sound/diceOne.mp3");
+const WinGame = new Audio("media/sound/wingame.mp3");
+const HoldSound = new Audio("/media/sound/hold.mp3");
+
+
 //Variables noms des joueurs
 
 let Pseudo1 = document.getElementById("PseudoPlayer1")
@@ -84,6 +93,7 @@ function ChangePlayer() {
 //Lancer les dés
   
 Dice.addEventListener('click', () =>{
+    playSoundDe()
   let RandomNumber = Math.floor(Math.random()*6) + 1
 Dice.innerHTML = `<img  src="./media/dice_${RandomNumber}.png" alt="dice_${RandomNumber}">`;
 
@@ -96,12 +106,17 @@ if (RandomNumber !== 1){
     ChangePlayer()
 }
 
+if(RandomNumber === 1 ){
+    playSoundWrong()
+}
+
 })
 
 
 // Si joueur actif clique sur HOLd => ajouter ROUND à GLOBALE
 
     Hold.addEventListener('click', () =>{
+        playSoundHold()
         document.querySelector(`#RoundPlayer${PlayerOn}`).textContent = 0 
         if(PlayerOn === 0){
             GlobaleScorePlayer0 += RoundScore
@@ -112,11 +127,13 @@ if (RandomNumber !== 1){
         }
 
         if(GlobaleScorePlayer0 >= 100){ 
+            playSoundWin()
             alert(`${Player1.textContent} a gagné ! `)
             console.log(Player1.textContent)
         }
 
         if(GlobaleScorePlayer1 >= 100){ 
+            playSoundWin()
             alert(`${Player2.textContent} a gagné ! `)
         }
 
@@ -125,8 +142,6 @@ if (RandomNumber !== 1){
     })
     
 
-   
-    
    // Titre  
     
     const idInterval = setInterval(function(){
@@ -138,5 +153,23 @@ if (RandomNumber !== 1){
         }
     }, interval)
 
+
+// Sound of game
+
+function playSoundDe() {
+  DiceSound.play();
+}
+
+function playSoundWrong() {
+  DiceOne.play();
+}
+
+function playSoundHold() {
+  HoldSound.play();
+}
+
+function playSoundWin() {
+  WinGame.play();
+}
 
 
